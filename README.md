@@ -22,10 +22,10 @@ func main() {
 	// Call GetNumOfMessages function
 	count, err := utils.GetNumOfMessages(data1, data2)
 	if err != nil {
-		fmt.Println("Error:", err)
+		fmt.Printf("Error: %s\n", err.Error())
 		return
 	}
 
-	fmt.Println("Number of top-level messages:", count) // 3
+	fmt.Printf("Number of top-level messages: %d", count) // 3
 }
 ```
