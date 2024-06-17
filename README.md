@@ -16,8 +16,8 @@ import (
 
 func main() {
 	// Example data
-	data1 := []byte(`{"name": "Alice"}`)
-	data2 := []byte(`{"name": "Bob"}{"name": "Charlie"}`)
+	data1 := []byte(`[{"name": "Alice"}]`)
+	data2 := []byte(`[{"name": "Bob"}, {"name": "Charlie"}]`)
 
 	// Call GetNumOfMessages function
 	count, err := utils.GetNumOfMessages(data1, data2)
