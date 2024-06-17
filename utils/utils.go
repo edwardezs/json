@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"io"
-	"slices"
 
 	"github.com/pkg/errors"
 )
@@ -16,7 +15,7 @@ func GetNumOfMessages(data ...[]byte) (int, error) {
 	}
 
 	var msgCount int
-	var stack []json.Delim
+	var stack int
 
 	for _, batch := range data {
 		decoder := json.NewDecoder(bytes.NewReader(batch))
@@ -33,9 +32,9 @@ func GetNumOfMessages(data ...[]byte) (int, error) {
 			if delim, ok := t.(json.Delim); ok {
 				switch delim {
 				case '{':
-					stack = append(stack, delim)
+					stack++
 				case '}':
-					stack = slices.Delete(stack, len(stack)-1, len(stack))
+					stack--
 				default:
 					continue
 				}
@@ -43,7 +42,7 @@ func GetNumOfMessages(data ...[]byte) (int, error) {
 				continue
 			}
 
-			if len(stack) == 0 {
+			if stack == 0 {
 				msgCount++
 			}
 		}
