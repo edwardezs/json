@@ -3,10 +3,10 @@ package utils
 import (
 	"bytes"
 	"fmt"
-	"json-utils/utils"
 	"testing"
 	"time"
 
+	"github.com/edwardezs/json/utils"
 	"github.com/stretchr/testify/require"
 )
 

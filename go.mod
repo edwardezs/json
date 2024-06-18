@@ -1,4 +1,4 @@
-module json-utils
+module github.com/edwardezs/json
 
 go 1.22.3
 

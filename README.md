@@ -1,5 +1,7 @@
 # json-utils
 
+Package provides utilities for proceeding JSON-files.
+
 ## GetNumOfMessages
 
 This function is designed to count the number of top-level JSON objects in a batch of byte slices. It ignores any nested JSON objects and only counts the top-level ones.
@@ -11,7 +13,7 @@ package main
 
 import (
     "fmt"
-    "github.com/edwardezs/json-utils/utils"
+    "github.com/edwardezs/json/utils"
 )
 
 func main() {
@@ -42,7 +44,7 @@ package main
 
 import (
     "fmt"
-    "github.com/edwardezs/json-utils/utils"
+    "github.com/edwardezs/json/utils"
 )
 
 func main() {
